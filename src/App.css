@@ -1,3 +1,4 @@
+
 .App {
   text-align: center;
 }
@@ -5,6 +6,59 @@
 .App-logo {
   height: 40vmin;
   pointer-events: none;
+}
+
+.container {
+  width: 2.125in;
+  height: 3.37in;
+  margin: 0;
+  padding: 0;
+  background-image: url('./components/back.jpg');
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.logo-container {
+  text-align: center;
+  color: #09A3D5;
+  margin: 0;
+  padding: 6px 0;
+}
+
+.logo {
+  font-weight: 800;
+  margin: 0;
+  padding: 0;
+}
+
+.logo-address {
+  margin-top: -4px;
+  padding: 0;
+  font-size: 12px;
+}
+
+.avatar {
+  text-align: center;
+  margin-top: -12px;
+}
+
+.image {
+  width: 1in;
+  height: 1.2in;
+}
+
+.user-info {
+  color:black;
+  padding: 0 8px;
+}
+
+.user-heading {
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.user-details {
+  font-size: 12px;
 }
 
 @media (prefers-reduced-motion: no-preference) {
