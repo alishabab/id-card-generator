@@ -1,10 +1,11 @@
 import './App.css';
-import { IdCard } from './components/IdCard';
+
+import { JoinForm } from './components/JoinForm';
 
 function App() {
   return (
     <>
-      <IdCard />
+      <JoinForm />
     </>
   );
 }
