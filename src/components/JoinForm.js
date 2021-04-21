@@ -1,6 +1,5 @@
-import {useState} from 'react';
-import html2canvas from 'html2canvas';
-import { jsPDF } from 'jspdf';
+import {useState, createRef } from 'react';
+import Pdf from "react-to-pdf";
 import { IdCards } from './IdCards';
 
 export const JoinForm = () => {
@@ -17,18 +16,7 @@ export const JoinForm = () => {
     date: '',
   })
 
-  const printDocument = () => {
-    const input = document.getElementById('cards');
-    html2canvas(input)
-      .then((canvas) => {
-        const imgData = canvas.toDataURL('image/png');
-        const pdf = new jsPDF();
-        pdf.addImage(imgData, 'JPEG', 0, 0);
-        // pdf.output('dataurlnewwindow');
-        pdf.save("download.pdf");
-      })
-    ;
-  }
+  const ref = createRef();
 
   const handleClick = (e) => {
     e.preventDefault();
@@ -45,6 +33,8 @@ export const JoinForm = () => {
       date: '',
     })
   }
+
+
   console.log(cards)
   return (
     <>
@@ -99,10 +89,13 @@ export const JoinForm = () => {
         <br />
         <button onClick={handleClick}> Save </button>
       </div>
-      <div id="cards" className="cards">
+      {cards.length > 0 && <Pdf targetRef={ref} filename="cards.pdf" scale={1}>
+        {({ toPdf }) => <button onClick={toPdf}>Generate Pdf</button>}
+      </Pdf>}
+      <div ref={ref}>
         {cards.length > 0 && <IdCards cards={cards} />}
       </div>
-      <button onClick={printDocument}>Download</button>
     </>
   )
 }
+
