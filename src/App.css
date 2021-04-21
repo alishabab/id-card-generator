@@ -111,7 +111,7 @@
 
 .cards {
   margin: 0;
-  padding: 8px;
+  padding: 0;
   width: 8.3in;
   height: 11.7in;
   display: flex;

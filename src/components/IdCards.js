@@ -1,7 +1,7 @@
+import React from 'react';
 import { IdCard } from './IdCard'
-export const IdCards = ({cards}) => {
-  return (
-          <div className="cards">
+export const IdCards = React.forwardRef(({cards}, ref) => (
+          <div className="cards" ref={ref}>
           {
             cards.map(user => 
             <IdCard 
@@ -18,5 +18,4 @@ export const IdCards = ({cards}) => {
                 />
                 )}
             </div>
-  )
-}
+  ))

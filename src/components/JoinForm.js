@@ -1,4 +1,5 @@
-import {useState, createRef } from 'react';
+import {useState, useRef } from 'react';
+import { exportComponentAsJPEG, exportComponentAsPNG } from 'react-component-export-image';
 import Pdf from "react-to-pdf";
 import { IdCards } from './IdCards';
 
@@ -16,7 +17,7 @@ export const JoinForm = () => {
     date: '',
   })
 
-  const ref = createRef();
+  const componentRef = useRef();
 
   const handleClick = (e) => {
     e.preventDefault();
@@ -89,12 +90,18 @@ export const JoinForm = () => {
         <br />
         <button onClick={handleClick}> Save </button>
       </div>
-      {cards.length > 0 && <Pdf targetRef={ref} filename="cards.pdf" scale={1}>
-        {({ toPdf }) => <button onClick={toPdf}>Generate Pdf</button>}
+      {cards.length > 0 && <Pdf targetRef={componentRef} filename="component.pdf">
+        {({ toPdf }) => <button onClick={toPdf}>Export As PDF</button>}
       </Pdf>}
-      <div ref={ref}>
-        {cards.length > 0 && <IdCards cards={cards} />}
-      </div>
+    
+      <button onClick={() => exportComponentAsJPEG(componentRef)}>
+        Export As JPEG
+      </button>
+      <button onClick={() => exportComponentAsPNG(componentRef)}>
+        Export As PNG
+      </button>
+      <IdCards ref={componentRef} cards={cards} />
+      
     </>
   )
 }
