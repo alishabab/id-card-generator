@@ -1,23 +1,23 @@
 {
   "files": {
-    "main.css": "/id-card-generator/static/css/main.4eb4ef7a.chunk.css",
-    "main.js": "/id-card-generator/static/js/main.5aa7ed4e.chunk.js",
-    "main.js.map": "/id-card-generator/static/js/main.5aa7ed4e.chunk.js.map",
-    "runtime-main.js": "/id-card-generator/static/js/runtime-main.d5208f43.js",
-    "runtime-main.js.map": "/id-card-generator/static/js/runtime-main.d5208f43.js.map",
-    "static/js/2.8109c07d.chunk.js": "/id-card-generator/static/js/2.8109c07d.chunk.js",
-    "static/js/2.8109c07d.chunk.js.map": "/id-card-generator/static/js/2.8109c07d.chunk.js.map",
-    "static/js/3.a6d15c49.chunk.js": "/id-card-generator/static/js/3.a6d15c49.chunk.js",
-    "static/js/3.a6d15c49.chunk.js.map": "/id-card-generator/static/js/3.a6d15c49.chunk.js.map",
+    "main.css": "/id-card-generator/static/css/main.e112f851.chunk.css",
+    "main.js": "/id-card-generator/static/js/main.7ce07344.chunk.js",
+    "main.js.map": "/id-card-generator/static/js/main.7ce07344.chunk.js.map",
+    "runtime-main.js": "/id-card-generator/static/js/runtime-main.cd02e335.js",
+    "runtime-main.js.map": "/id-card-generator/static/js/runtime-main.cd02e335.js.map",
+    "static/js/2.488b3f0b.chunk.js": "/id-card-generator/static/js/2.488b3f0b.chunk.js",
+    "static/js/2.488b3f0b.chunk.js.map": "/id-card-generator/static/js/2.488b3f0b.chunk.js.map",
+    "static/js/3.0989e404.chunk.js": "/id-card-generator/static/js/3.0989e404.chunk.js",
+    "static/js/3.0989e404.chunk.js.map": "/id-card-generator/static/js/3.0989e404.chunk.js.map",
     "index.html": "/id-card-generator/index.html",
-    "static/css/main.4eb4ef7a.chunk.css.map": "/id-card-generator/static/css/main.4eb4ef7a.chunk.css.map",
-    "static/js/2.8109c07d.chunk.js.LICENSE.txt": "/id-card-generator/static/js/2.8109c07d.chunk.js.LICENSE.txt",
+    "static/css/main.e112f851.chunk.css.map": "/id-card-generator/static/css/main.e112f851.chunk.css.map",
+    "static/js/2.488b3f0b.chunk.js.LICENSE.txt": "/id-card-generator/static/js/2.488b3f0b.chunk.js.LICENSE.txt",
     "static/media/App.css": "/id-card-generator/static/media/back.8605a62c.jpg"
   },
   "entrypoints": [
-    "static/js/runtime-main.d5208f43.js",
-    "static/js/2.8109c07d.chunk.js",
-    "static/css/main.4eb4ef7a.chunk.css",
-    "static/js/main.5aa7ed4e.chunk.js"
+    "static/js/runtime-main.cd02e335.js",
+    "static/js/2.488b3f0b.chunk.js",
+    "static/css/main.e112f851.chunk.css",
+    "static/js/main.7ce07344.chunk.js"
   ]
 }
