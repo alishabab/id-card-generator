@@ -1,7 +1,7 @@
 import '../App.css';
 import avatar from './avatar.png';
 
-export const IdCard = ({name, fatherName, age, gender, addressLine1, addressLine2, designation, uploadedImage, date}) => {
+export const IdCard = ({name, fatherName, age, gender, addressLine1, addressLine2, designation, uploadedImage, src, date}) => {
   return (
 
   <div className="container">
@@ -10,7 +10,7 @@ export const IdCard = ({name, fatherName, age, gender, addressLine1, addressLine
       <p className="logo-address">Pakwara Road, Said Nagli</p>
     </div>
     <div className="avatar">
-      <img src={uploadedImage || avatar} alt="avatar" className="image"/>
+      <img src={uploadedImage || src || avatar} alt="avatar" className="image"/>
     </div>
     <div className="user-info">
       <div className="user-info-line">

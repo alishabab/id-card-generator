@@ -32,6 +32,7 @@ export const JoinForm = () => {
       addressLine2: '',
       designation: '',
       uploadedImage: '',
+      src: '',
       date: '',
     })
   }
@@ -99,6 +100,11 @@ export const JoinForm = () => {
           <input type="file"  onChange={(e) => setUserDetails({...userDetails, uploadedImage: URL.createObjectURL(e.target.files[0])})}/>
         </label>
         <br />
+        <label htmlFor="uploadedImage">
+        Or Image url:
+          <input type="text"  onChange={(e) => setUserDetails({...userDetails, src: e.target.value})}/>
+        </label>
+        <br />
         <button onClick={handleClick}> Save </button>
         <button onClick={handleReset}> Reset </button>
       </div>
@@ -106,12 +112,17 @@ export const JoinForm = () => {
         {({ toPdf }) => <button onClick={toPdf}>Export As PDF</button>}
       </Pdf>}
     
-      <button onClick={() => exportComponentAsJPEG(componentRef)}>
-        Export As JPEG
-      </button>
-      <button onClick={() => exportComponentAsPNG(componentRef)}>
-        Export As PNG
-      </button>
+      {
+      cards.length > 0 && 
+      <>
+        <button onClick={() => exportComponentAsJPEG(componentRef)}>
+          Export As JPEG
+        </button>
+        <button onClick={() => exportComponentAsPNG(componentRef)}>
+          Export As PNG
+        </button>
+      </>
+      }
       <IdCards ref={componentRef} cards={cards} />
       
     </>

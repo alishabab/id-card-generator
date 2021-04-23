@@ -14,6 +14,7 @@ export const IdCards = React.forwardRef(({cards}, ref) => (
                 addressLine1={user.addressLine1}
                 addressLine2={user.addressLine2}
                 uploadedImage={user.uploadedImage}
+                src={user.src}
                 date={user.date}
                 />
                 )}
