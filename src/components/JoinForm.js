@@ -1,12 +1,14 @@
 import { useEffect } from 'react';
 import {useState, useRef } from 'react';
 import { exportComponentAsJPEG, exportComponentAsPNG } from 'react-component-export-image';
+import { v4 as uuidv4 } from 'uuid';
 import Pdf from "react-to-pdf";
 import { IdCards } from './IdCards';
 
 export const JoinForm = () => {
   const [cards, setCards] = useState(JSON.parse(localStorage.getItem('cards')) || []);
   const [userDetails, setUserDetails] = useState({
+    id: '',
     name: '',
     fatherName: '',
     age: '',
@@ -15,15 +17,26 @@ export const JoinForm = () => {
     addressLine2: '',
     designation: '',
     uploadedImage: '',
+    src: '',
     date: '',
   })
 
   const componentRef = useRef();
 
+  
   const handleClick = (e) => {
     e.preventDefault();
-     setCards([...cards, userDetails])
+    const index = cards.findIndex(user => user.id === userDetails.id);
+    console.log(index)
+    if (index>=0) {
+      cards[index] = userDetails;
+    } else {
+      userDetails.id = uuidv4();
+      setCards([...cards, userDetails])
+    }
+
     setUserDetails({
+      id: '',
       name: '',
       fatherName: '',
       age: '',
@@ -47,8 +60,16 @@ export const JoinForm = () => {
     localStorage.clear();
   }
 
+const handleEdit = (e, user) => {
+  e.preventDefault();
+  setUserDetails(user);
+}
 
-  console.log(cards)
+const handleDelete = (e, id) => {
+  const newCards = cards.filter(user => user.id !== id);
+  setCards(newCards);
+}
+
   return (
     <>
       <div className="form">
@@ -102,7 +123,7 @@ export const JoinForm = () => {
         <br />
         <label htmlFor="uploadedImage">
         Or Image url:
-          <input type="text"  onChange={(e) => setUserDetails({...userDetails, src: e.target.value})}/>
+          <input type="text" value={userDetails.src} onChange={(e) => setUserDetails({...userDetails, src: e.target.value})}/>
         </label>
         <br />
         <button onClick={handleClick}> Save </button>
@@ -123,7 +144,11 @@ export const JoinForm = () => {
         </button>
       </>
       }
-      <IdCards ref={componentRef} cards={cards} />
+      <IdCards ref={componentRef} 
+              cards={cards} 
+              handleEdit={handleEdit}
+              handleDelete={handleDelete}
+              setCards={setCards}/>
       
     </>
   )

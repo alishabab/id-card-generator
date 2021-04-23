@@ -18,6 +18,10 @@
   background-size: contain;
   position: relative;
 }
+.container:hover > button{
+  display: block;
+  color: red;
+}
 
 .logo-container {
   text-align: center;
@@ -117,6 +121,12 @@
   display: flex;
   flex-wrap: wrap;
 }
+
+
+.d-none {
+  display: none;
+}
+
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
