@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/id-card-generator/static/css/main.fee01353.chunk.css",
+    "main.css": "/id-card-generator/static/css/main.b0477bce.chunk.css",
     "main.js": "/id-card-generator/static/js/main.3a7e8736.chunk.js",
     "main.js.map": "/id-card-generator/static/js/main.3a7e8736.chunk.js.map",
     "runtime-main.js": "/id-card-generator/static/js/runtime-main.29da086c.js",
@@ -10,14 +10,14 @@
     "static/js/3.366bd060.chunk.js": "/id-card-generator/static/js/3.366bd060.chunk.js",
     "static/js/3.366bd060.chunk.js.map": "/id-card-generator/static/js/3.366bd060.chunk.js.map",
     "index.html": "/id-card-generator/index.html",
-    "static/css/main.fee01353.chunk.css.map": "/id-card-generator/static/css/main.fee01353.chunk.css.map",
+    "static/css/main.b0477bce.chunk.css.map": "/id-card-generator/static/css/main.b0477bce.chunk.css.map",
     "static/js/2.1e0a36eb.chunk.js.LICENSE.txt": "/id-card-generator/static/js/2.1e0a36eb.chunk.js.LICENSE.txt",
     "static/media/App.css": "/id-card-generator/static/media/back.8605a62c.jpg"
   },
   "entrypoints": [
     "static/js/runtime-main.29da086c.js",
     "static/js/2.1e0a36eb.chunk.js",
-    "static/css/main.fee01353.chunk.css",
+    "static/css/main.b0477bce.chunk.css",
     "static/js/main.3a7e8736.chunk.js"
   ]
 }
