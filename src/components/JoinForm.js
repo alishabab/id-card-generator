@@ -1,10 +1,11 @@
+import { useEffect } from 'react';
 import {useState, useRef } from 'react';
 import { exportComponentAsJPEG, exportComponentAsPNG } from 'react-component-export-image';
 import Pdf from "react-to-pdf";
 import { IdCards } from './IdCards';
 
 export const JoinForm = () => {
-  const [cards, setCards] = useState([]);
+  const [cards, setCards] = useState(JSON.parse(localStorage.getItem('cards')) || []);
   const [userDetails, setUserDetails] = useState({
     name: '',
     fatherName: '',
@@ -21,7 +22,7 @@ export const JoinForm = () => {
 
   const handleClick = (e) => {
     e.preventDefault();
-    setCards([...cards, userDetails])
+     setCards([...cards, userDetails])
     setUserDetails({
       name: '',
       fatherName: '',
@@ -33,6 +34,16 @@ export const JoinForm = () => {
       uploadedImage: '',
       date: '',
     })
+  }
+
+  useEffect(() => {
+    localStorage.setItem('cards',JSON.stringify(cards))
+  },[cards])
+
+  const handleReset = (e) => {
+    e.preventDefault();
+    setCards([])
+    localStorage.clear();
   }
 
 
@@ -89,6 +100,7 @@ export const JoinForm = () => {
         </label>
         <br />
         <button onClick={handleClick}> Save </button>
+        <button onClick={handleReset}> Reset </button>
       </div>
       {cards.length > 0 && <Pdf targetRef={componentRef} filename="component.pdf">
         {({ toPdf }) => <button onClick={toPdf}>Export As PDF</button>}
